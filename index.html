@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta name="description" content="BATTERY STATS">
+	<meta name="author" content="Admin">
+	<link rel="icon" href="/favicon.ico">
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	
+        <title>Battery Data</title>
+	
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+
+	<!-- Bootstrap core CSS -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+        <!-- Main CSS Stylesheet -->
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+	<img src="http://i.imgur.com/igTPIfM.png"> </img>
+	<h3> 
+	<input class="PullTable" type="button" id="PullTable" value="Load Table"> 
+	<input class="PullGraph" type="button" id="PullGraph" value="Load Graph"> 
+	</h3>
+
+
+
+	<!-- Plotly chart will be drawn inside this div -->
+
+	<div id="plotly-div"></div>
+	<div id="table-div"></div>
+        <div class="text-center" id="datadl-div">
+        <form action="php/download_data.php" method="POST">
+            Enter date range:
+            <br>Initial Date: <input type="datetime-local" name="initial">
+            End Date: <input type="datetime-local" name="final">
+            <input type="submit">
+        </form>
+        </div>
+  	<br>
+  	<br>
+
+        <!-- Javascript here -->
+	<script type="text/javascript" src="js/BatteryPlots.js"></script>
+</body>
+
+</html>
